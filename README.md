@@ -8,7 +8,7 @@ AI does not lack data. It lacks context: where data should come from, whether it
 - **Try the demo:** https://balrajbhardwaj.github.io/coherent-memory-network/demo.html
 
 ---
-
+ 
 ## The problem
 
 Business teams can now build working tools with AI in hours. When a person or an AI agent cannot easily find the approved source for a piece of data, they use the nearest one, and an ungoverned data path is created. Repeat that across many teams and agents and the result is fragmentation at scale.
