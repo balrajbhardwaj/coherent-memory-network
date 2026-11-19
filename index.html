@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coherent Memory Network</title>
+<meta name="description" content="A white paper and interactive demo on giving AI agents governed context in regulated organisations. By Balraj Bhardwaj.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Coherent Memory Network, home">
+      <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="3.2" fill="#5CB4C3"/><circle cx="4.5" cy="7" r="2.2" fill="none" stroke="#AEB8CE" stroke-width="1.4"/><circle cx="21.5" cy="7" r="2.2" fill="none" stroke="#AEB8CE" stroke-width="1.4"/><circle cx="4.5" cy="19" r="2.2" fill="none" stroke="#AEB8CE" stroke-width="1.4"/><circle cx="21.5" cy="19" r="2.2" fill="none" stroke="#AEB8CE" stroke-width="1.4"/><path d="M6.4 8.1 10.3 11.4M19.6 8.1 15.7 11.4M6.4 17.9 10.3 14.6M19.6 17.9 15.7 14.6" stroke="#5CB4C3" stroke-width="1.4"/></svg>
+      <span>Coherent Memory Network</span>
+    </a>
+    <div class="nav-links">
+      <a href="#paper" class="keep" data-nav>White paper</a>
+      <a href="demo.html" class="keep">Demo</a>
+      <a href="#about" data-nav>About</a>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">White paper</div>
+    <h1>Trusted AI needs a coherent memory</h1>
+    <p class="lede"><strong>AI does not lack data. It lacks context.</strong> A practical framework for regulated organisations to give AI agents governed context they can query at the moment they use data.</p>
+    <div class="byline"><span>By <b>Balraj Bhardwaj</b></span><span>Data Architect, Data Modeller, Data Governance Specialist</span><span>November 2026</span></div>
+    <div class="actions">
+      <a class="btn btn-primary" href="#paper">Read the white paper</a>
+      <a class="btn btn-ghost" href="demo.html">Try the interactive demo</a>
+    </div>
+    <div class="hero-q" role="list" aria-label="The four questions the network answers">
+      <div role="listitem"><span>Source</span><p>Where should this data come from?</p></div>
+      <div role="listitem"><span>Fitness</span><p>Is it suitable for this task?</p></div>
+      <div role="listitem"><span>Controls</span><p>Are the rules enforced at the point of use?</p></div>
+      <div role="listitem"><span>Access</span><p>Is this consumer entitled to it?</p></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="block" id="paper" aria-labelledby="paper-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">White paper</div>
+      <h2 id="paper-title">The Coherent Memory Network</h2>
+      <p>A design discipline for giving AI the institutional memory it needs to make trustworthy decisions. Edited from a five part article series.</p>
+    </div>
+
+    <div class="paper-grid">
+      <aside class="toc" aria-label="Contents">
+        <p class="toc-title">Contents</p>
+        <ol>
+          <li><a href="#summary">Executive summary</a></li>
+          <li><a href="#ch1">1. Your AI is only as good as its memory</a></li>
+          <li><a href="#ch2">2. Start with an authorised source registry</a></li>
+          <li><a href="#ch3">3. Fitness for purpose</a></li>
+          <li><a href="#ch4">4. Every agent is a control point</a></li>
+          <li><a href="#ch5">5. The operating model</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+          <li><a href="#references">References</a></li>
+        </ol>
+        <button class="btn btn-pdf" type="button" onclick="window.print()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+          Download as PDF
+        </button>
+      </aside>
+
+      <article class="paper">
+        <div class="paper-meta">
+          <span>Author <b>Balraj Bhardwaj</b></span>
+          <span>Published <b>November 2026</b></span>
+          <span>Reading time <b>about 25 minutes</b></span>
+          <a class="no-print" href="#" onclick="window.print();return false;">Download as PDF</a>
+        </div>
+
+        <div class="prose">
+
+<div class="summary" id="summary">
+<h2>Executive summary</h2>
+<p>Business teams can now describe what they need in plain English and have a working application in hours. The speed is real, and so is the risk. When a person or an AI agent cannot easily find the approved source for a piece of data, they use the nearest one, and an ungoverned data path is born. Repeat that across many teams and many agents and the result is fragmentation at scale.</p>
+<p>This paper argues that <strong>AI does not lack data. It lacks context.</strong> It needs to know where data should come from, whether it is fit for the task, whether the rules are enforced at the moment of use, and whether the consumer is entitled to it. Most organisations hold this context in documents, spreadsheets and people's heads. AI agents can read none of them.</p>
+<p>The <strong>Coherent Memory Network</strong> is a design discipline for turning that context into something machines can query. It is built from five components:</p>
+<ul>
+<li><strong>Authorised Source Registry:</strong> where should this data come from, and who owns it?</li>
+<li><strong>Fitness for Purpose Framework:</strong> is this data suitable for this specific task?</li>
+<li><strong>Runtime Controls:</strong> are the data quality rules enforced at the point of consumption?</li>
+<li><strong>Governed Access:</strong> is this consumer entitled to this data, for this purpose?</li>
+<li><strong>Organisational Reality Map:</strong> how does the business actually work, and who acts when something breaks?</li>
+</ul>
+<p>Each component answers its question at runtime through a shared service. Together they form one capability, run by five roles and adopted in four stages of maturity. The network is not a product. It is built component by component, domain by domain, on top of the catalogues, controls and governance forums that most regulated firms already have.</p>
+</div>
+
+<span class="chap" id="ch1">Chapter 1</span>
+<h2>Your AI is only as good as its memory</h2>
+<p class="chap-src">First published on LinkedIn, 8 April 2026</p>
+
+<p>Business users can now describe what they need in plain English and watch a working application appear in hours. This is sometimes called vibe coding. There is no backlog and no six month wait for IT.</p>
+<p>The intent is good and the speed is impressive. But it quietly introduces risk, and the risk is not in the code. It is in the data.</p>
+
+<h3>When the source is not the source</h3>
+<p>Consider a regulatory reporting analyst who needs Legal Entity Identifier (LEI) data to enrich transaction reports. The organisation already has an approved source: a vetted entity data provider, integrated into the firm's data supply chain with proper controls.</p>
+<p>But the approved source is slow to update, hard to access, or stuck behind a long backlog. So the analyst builds a quick tool that pulls LEI data straight from the GLEIF API. They add some string matching on entity names, a few formatting tweaks and some manual overrides. It works. It fills the gaps.</p>
+<p>The catch is that this logic is an uncontrolled end user computation. It has not been tested or reconciled against the approved source. It sits outside change management. And a downstream report, possibly submitted to a regulator, now relies on data from an ungoverned pipeline built in an afternoon.</p>
+<p>It is a rational response to a bottleneck. The result, though, is a shadow data path where accuracy and auditability become unknown at exactly the point where they matter most. Multiply this across dozens of teams, each solving their own gaps with their own tools, and you get fragmentation at scale. Not because anyone did anything wrong, but because the foundation was not there to guide them.</p>
+
+<h3>Governance is the trust layer</h3>
+<p>If organisations want AI outputs they can rely on, the data underneath must be governed: approved sources, consistent definitions, quality controls and traceable lineage.</p>
+<p>When applications took months to build, governance could catch up. When they are built in hours, governance must already be in place. It has to be part of the infrastructure, not added afterwards. In regulatory reporting or transaction monitoring the point is obvious. A model fed ungoverned data does not produce trusted outputs, and trust lost with a regulator is very expensive to rebuild.</p>
+
+<h3>Context must work for machines, not just people</h3>
+<p>Think of a business glossary as a dictionary. It tells you what a word means. It does not tell you which sentence to use it in, or when it would be the wrong word entirely.</p>
+<p>AI needs more than definitions. It needs sourcing rules, fitness criteria and usage conditions, encoded in a form it can read and act on rather than buried in documents only a subject matter expert can navigate. Most organisations have built context for people. Very few have built context that machines can follow.</p>
+<p>This is not a new idea. The semantic layer, enterprise knowledge graphs and data fabric architectures all point the same way: a machine readable layer of business meaning between raw data and the applications that consume it. Gartner suggests that organisations that prioritise semantics in AI ready data could improve generative AI model accuracy by up to 80% and reduce costs by up to 60% by 2027 <a href="#ref1">[1]</a>. Microsoft's launch of Fabric IQ, a semantic ontology layer designed to ground AI agents in business context rather than raw database schemas, reinforces the shift <a href="#ref2">[2]</a>. The direction of travel is clear. The challenge is turning it into something practical and grounded in how an organisation actually works.</p>
+
+<h3>A blueprint: the Coherent Memory Network</h3>
+<p>What organisations need is not another platform or product. It is a design discipline that acts as institutional memory for AI. I call it the Coherent Memory Network. It draws on the principles behind semantic layers and knowledge graphs, but frames them as an interconnected, governed system rooted in organisational reality.</p>
+
+<figure>
+  <div class="diagram-box">
+    <div class="flow" role="img" aria-label="An AI agent's request passes through the source registry, fitness framework, runtime controls and governed access before data is consumed. The organisational reality map sits underneath, and breaches feed back to data owners.">
+      <div class="flow-node agent"><b>AI agent</b><span>identity, purpose, data needed</span></div>
+      <div class="flow-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></div>
+      <div class="flow-node svc"><b>Source Registry</b><span>where from?</span></div>
+      <div class="flow-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></div>
+      <div class="flow-node svc"><b>Fitness</b><span>suitable?</span></div>
+      <div class="flow-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></div>
+      <div class="flow-node svc"><b>Runtime Controls</b><span>rules met?</span></div>
+      <div class="flow-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></div>
+      <div class="flow-node svc"><b>Governed Access</b><span>entitled?</span></div>
+      <div class="flow-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></div>
+      <div class="flow-node"><b>Consume</b><span>logged in full</span></div>
+    </div>
+    <div class="foundation"><b>Organisational Reality Map</b> &nbsp;domains, owners, escalation paths and governance forums underneath every step</div>
+    <div class="feedback"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M13 5A6 6 0 1 0 14 9" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M13 1v4H9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>Breaches notify the data owner and feed the governance dashboard</div>
+  </div>
+  <figcaption>Figure 1. The Coherent Memory Network: five components, one capability</figcaption>
+</figure>
+
+<p>Together, these components form a coherent memory that AI can navigate. It is not a single database. It is a connected framework that reflects the way the organisation actually operates. The rest of this paper takes each component in turn and shows how to build it.</p>
+
+<span class="chap" id="ch2">Chapter 2</span>
+<h2>Start with an authorised source registry</h2>
+<p class="chap-src">First published on LinkedIn, 9 May 2026</p>
+
+<p>The first component tells AI where to get data. The core argument of this chapter is simple: data modelling is how you capture context in a form that machines can read and act on.</p>
+
+<h3>The problem is not access. It is the absence of context.</h3>
+<p>Go back to the analyst from chapter 1. They did not lack access to LEI data. They lacked visibility. There was no clear, structured answer to a basic question: where should I get this data?</p>
+<p>That question sounds simple. It is not. Behind it sit several layers of context: which system is the golden source, who owns it, what quality standards apply, which use cases it is approved for, and how it connects to other data in the supply chain. Today that context lives in people's heads, in emails, and in spreadsheets held together with good intentions. It is not modelled, not structured, and not available to an AI agent when it needs it.</p>
+
+<h3>What an authorised source registry is</h3>
+<p>An authorised source registry is a governed, modelled layer that maps key data elements to their approved sources, along with the context needed to use them correctly. It does not store data. It captures context about data: where it comes from, who is accountable, what standards it must meet, and when it may be used.</p>
+<p>Think of it as a signposting system. It does not hold the goods. It tells you, and your AI, exactly where to find the right ones.</p>
+
+<h3>Why data modelling is the foundation</h3>
+<p>Without a model, a source registry is just a spreadsheet: static, flat and invisible to machines. With a model, it becomes a structured, queryable map of the data landscape that both people and AI agents can navigate. The context does not live in the individual data elements. It lives in the relationships between them.</p>
+
+<h3>The conceptual model</h3>
+<p>At its core, the registry has six entities:</p>
+<ul>
+<li><strong>Data Element:</strong> the basic unit of business data, such as Legal Entity Identifier, Counterparty Name or Trade Reference.</li>
+<li><strong>Source System:</strong> the system that holds or produces the data, such as an entity data provider, a trading platform or a reference data hub.</li>
+<li><strong>Domain:</strong> the business area accountable for the data, such as Reference Data, Trade Capture or Financial Crime.</li>
+<li><strong>Data Owner:</strong> the named person or role accountable within the domain.</li>
+<li><strong>Quality Standard:</strong> the measurable criteria the data must meet, such as completeness, timeliness and accuracy thresholds.</li>
+<li><strong>Use Case:</strong> the approved business purpose, such as regulatory reporting, transaction monitoring or management information.</li>
+</ul>
+
+<figure>
+  <div class="diagram-box fig-scroll">
+  <svg class="er" viewBox="0 0 800 370" role="img" aria-label="Conceptual model. A data element is sourced from a golden source system and may have copies elsewhere. A source system is owned by a domain. A data owner is accountable in the domain. A data element has quality standards, which vary by use case. A use case is approved to consume from specific source systems." style="min-width:640px;display:block;margin:0 auto">
+    <path class="rel" d="M190 70 H530"/>
+    <path class="rel" d="M610 95 V165"/>
+    <path class="rel" d="M410 190 H530"/>
+    <path class="rel" d="M110 95 V285"/>
+    <path class="rel" d="M190 310 H530"/>
+    <path class="rel" d="M690 310 H740 V70 H690" stroke-dasharray="5 4"/>
+    <rect class="lbl-bg" x="250" y="59" width="220" height="22" rx="4"/>
+    <text class="lbl" x="360" y="74" text-anchor="middle">sourced from (one golden, many copies)</text>
+    <rect class="lbl-bg" x="618" y="119" width="64" height="22" rx="4"/>
+    <text class="lbl" x="650" y="134" text-anchor="middle">owned by</text>
+    <rect class="lbl-bg" x="428" y="179" width="84" height="22" rx="4"/>
+    <text class="lbl" x="470" y="194" text-anchor="middle">accountable in</text>
+    <rect class="lbl-bg" x="62" y="172" width="96" height="36" rx="4"/>
+    <text class="lbl" x="110" y="187" text-anchor="middle">has one</text>
+    <text class="lbl" x="110" y="201" text-anchor="middle">or more</text>
+    <rect class="lbl-bg" x="310" y="299" width="100" height="22" rx="4"/>
+    <text class="lbl" x="360" y="314" text-anchor="middle">varies by</text>
+    <rect class="lbl-bg" x="694" y="172" width="92" height="36" rx="4"/>
+    <text class="lbl" x="740" y="187" text-anchor="middle">approved to</text>
+    <text class="lbl" x="740" y="201" text-anchor="middle">consume from</text>
+    <g class="ent"><rect x="30" y="45" width="160" height="50" rx="8"/><text x="110" y="68" text-anchor="middle">Data Element</text><text class="sub" x="110" y="84" text-anchor="middle">e.g. LEI</text></g>
+    <g class="ent"><rect x="530" y="45" width="160" height="50" rx="8"/><text x="610" y="68" text-anchor="middle">Source System</text><text class="sub" x="610" y="84" text-anchor="middle">golden or derived copy</text></g>
+    <g class="ent"><rect x="530" y="165" width="160" height="50" rx="8"/><text x="610" y="188" text-anchor="middle">Domain</text><text class="sub" x="610" y="204" text-anchor="middle">e.g. Reference Data</text></g>
+    <g class="ent"><rect x="250" y="165" width="160" height="50" rx="8"/><text x="330" y="188" text-anchor="middle">Data Owner</text><text class="sub" x="330" y="204" text-anchor="middle">named person or role</text></g>
+    <g class="ent"><rect x="30" y="285" width="160" height="50" rx="8"/><text x="110" y="308" text-anchor="middle">Quality Standard</text><text class="sub" x="110" y="324" text-anchor="middle">completeness, timeliness</text></g>
+    <g class="ent"><rect x="530" y="285" width="160" height="50" rx="8"/><text x="610" y="308" text-anchor="middle">Use Case</text><text class="sub" x="610" y="324" text-anchor="middle">e.g. regulatory reporting</text></g>
+  </svg>
+  </div>
+  <figcaption>Figure 2. The registry's conceptual model. The relationships carry the context.</figcaption>
+</figure>
+
+<p>The relationships are where the context lives:</p>
+<ul>
+<li>A Data Element is sourced from one golden Source System but may exist as copies in several others. The model must say which is authoritative and which is derived. This is where most organisations fall short.</li>
+<li>A Source System is owned by a Domain, and a Data Owner within that domain is accountable for the quality and availability of the data.</li>
+<li>A Data Element has one or more Quality Standards, and those standards vary by Use Case. The same LEI data may need real time accuracy for transaction monitoring but can tolerate a one day delay for management reporting.</li>
+<li>A Use Case is approved to consume from specific Source Systems only. Not all copies are equal, and the model must record which source is fit for which purpose.</li>
+</ul>
+<p>This is not a flat list. It is a network of relationships that captures sourcing, ownership, quality and usage in one connected structure.</p>
+
+<h3>Not all data behaves the same</h3>
+<p>Reference data, such as LEIs and currency codes, is relatively stable, updates rarely and is reused widely. Master data, such as counterparty records and instrument details, changes more often and may have several contributing sources that need reconciling. Transactional data, such as trade events and payment instructions, is high volume, time sensitive and critical for lineage. Each type has different sourcing patterns, update frequencies and quality needs, and the model must reflect this. A single flat structure that treats an LEI the same as a trade event will not hold up in practice.</p>
+
+<h3>How to build it</h3>
+<p>A source registry does not need to be a massive programme. It is an iterative process led by domains, in four stages.</p>
+<ol>
+<li><strong>Identify and prioritise.</strong> Start with the data elements that carry the highest sourcing risk. In financial services these are usually regulatory and compliance critical: LEI, counterparty identifiers, trade references, sanctions data. Ask one question: which data elements, if sourced from the wrong place, would cause the most damage? Fifty elements modelled well beats five thousand catalogued badly.</li>
+<li><strong>Map sources and ownership.</strong> For each element, find the golden source, where copies exist, who owns the golden source and which domain it sits in. Work with domain teams directly. They know the real sourcing landscape, not the version drawn on architecture slides. This is where data mesh principles apply: the domain that produces the data owns its entry in the registry.</li>
+<li><strong>Define quality standards and usage rules.</strong> For each element, spell out what good looks like for each use case: completeness thresholds, timeliness and accuracy. Most importantly, record which source is approved for which purpose. This is the step most organisations skip, and the one that would have prevented the GLEIF scenario in chapter 1.</li>
+<li><strong>Model, publish and iterate.</strong> Build the conceptual model and validate it with domain owners and consumers. Then publish it in a form machines can query: an API, a knowledge graph or a semantic layer, not a PDF or a wiki page. Treat it as a living model and an operating capability, not a one off deliverable.</li>
+</ol>
+
+<h3>What a machine readable lookup looks like</h3>
+<p>If the registry is modelled properly, an AI agent building a regulatory report can query it and get a clear, structured answer.</p>
+<pre><span class="c"># Query: Where should I source LEI data for regulatory reporting?</span>
+<span class="k">approved_source:</span>   Entity Data Provider (System X)
+<span class="k">domain_owner:</span>      Reference Data, named owner
+<span class="k">quality_standard:</span>  99.5% complete, updated daily, reconciled against GLEIF weekly
+<span class="k">usage_approval:</span>
+  regulatory_reporting:   approved
+  marketing_segmentation: not approved
+<span class="k">copies_exist_in:</span>   System Y (trade capture), System Z (risk)
+<span class="k">copies_status:</span>     downstream consumers, not authoritative</pre>
+<p>This is the difference between a registry and a catalogue. A catalogue lists what exists. A registry tells you what to trust, and why.</p>
+
+<h3>Where most organisations stand</h3>
+<p>Most firms sit between two states. At one end there is no registry at all, and sourcing decisions are left to whoever builds the app. At the other is a static catalogue or data dictionary that documents sources but is not modelled, not maintained and not queryable by machines. Very few have a modelled, governed, machine readable registry that AI agents can use at runtime. That is the gap, and closing it is what makes the rest of the network possible.</p>
+
+<span class="chap" id="ch3">Chapter 3</span>
+<h2>Fitness for purpose: why good data is not good enough</h2>
+<p class="chap-src">First published on LinkedIn, 17 October 2026</p>
+
+<p>The registry tells AI where to find the right data. The next question is sharper: just because the data exists, is it right for the task?</p>
+<p>An AI is only as good as the data it consumes, and the discipline with which it is allowed to consume it. When data is technically accurate but unfit for the job, AI does what AI does. It hallucinates, overreaches and confidently extrapolates beyond what the data can support. Bias creeps in and outputs drift away from the original ask. Most teams treat this as a model problem. It is also a data problem. The Fitness for Purpose Framework keeps AI anchored to what the data genuinely supports.</p>
+
+<h3>Good data is not universal</h3>
+<p>Most data quality programmes treat good as a single standard: data passes or fails one test. Take LEI data. The dashboard says it is 99% complete, accurate and reconciled daily. Green status. Good data. But good for what?</p>
+<p>For management reporting it is excellent. For real time transaction monitoring, daily reconciliation is not enough. By the time an alert fires, the data may already be hours stale. Same data, same quality scores, two opposite verdicts. A single standard cannot hold both truths, yet most organisations still rely on one.</p>
+
+<h3>What fitness for purpose means</h3>
+<p>Fitness is not a single number. It is a view across several dimensions:</p>
+<ul>
+<li><strong>Timeliness:</strong> real time, intraday, T+1 or monthly.</li>
+<li><strong>Completeness:</strong> mandatory fields and coverage thresholds.</li>
+<li><strong>Accuracy:</strong> tolerance levels and reconciliation frequency.</li>
+<li><strong>Granularity:</strong> transaction level, aggregated or summary.</li>
+<li><strong>Lineage and audit:</strong> regulatory traceability requirements.</li>
+<li><strong>Approval status:</strong> which use cases the source is signed off for.</li>
+</ul>
+<p>Different use cases weight these dimensions differently. The framework makes those differences explicit and measurable.</p>
+
+<figure>
+  <div class="fig-scroll">
+  <table class="matrix">
+    <thead><tr><th scope="col">Use case</th><th scope="col">Timeliness</th><th scope="col">Accuracy</th><th scope="col">Lineage</th><th scope="col">Daily extract</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Regulatory reporting</th><td>T+1 acceptable</td><td>Reconciled to GLEIF</td><td>Full, auditable</td><td><span class="tag pass">Fit</span></td></tr>
+      <tr><th scope="row">Transaction monitoring</th><td>Real time required</td><td>High recall priority</td><td>Required</td><td><span class="tag fail">Not fit</span></td></tr>
+      <tr><th scope="row">Management MI</th><td>Weekly is fine</td><td>Directional is enough</td><td>Aggregation acceptable</td><td><span class="tag pass">Fit</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <figcaption>Figure 3. Same LEI data, three use cases, three fitness profiles</figcaption>
+</figure>
+
+<h3>The framework</h3>
+<p>The framework has four parts:</p>
+<ol>
+<li><strong>Quality dimensions:</strong> the standard set of measurable criteria.</li>
+<li><strong>Use case profiles:</strong> for each approved use case, the required value on each dimension.</li>
+<li><strong>Source to profile mapping:</strong> which sources meet which profiles, with evidence.</li>
+<li><strong>Runtime validation:</strong> fitness checked at the point of consumption, not on a quarterly dashboard.</li>
+</ol>
+<p>This is the layer that connects the registry to the decisions AI agents and applications make every day.</p>
+
+<h3>Why this matters for AI in particular</h3>
+<p>Human consumers make fitness judgements implicitly, through experience, business knowledge and common sense. AI agents have none of that. They take what they are given.</p>
+<p>Without an explicit fitness framework, an agent will happily consume data that scores 99% on a quality dashboard but is completely unsuitable for the task, then produce confident, wrong outputs that look credible until someone with domain expertise spots the drift. This is also where hallucination compounds. Given data that is only partly fit, a model fills the gaps with patterns from training rather than grounded facts. It is doing what it was designed to do. The fitness framework stops it being asked to do it in the first place.</p>
+<blockquote>Data quality is a property of the data. Fitness for purpose is a relationship between the data, the task and the consumer. The first is necessary. The second is what keeps AI honest.</blockquote>
+
+<h3>How to build it</h3>
+<ol>
+<li><strong>Define the dimensions.</strong> Standardise the language. Pick six to eight measurable criteria that actually matter, and avoid endless taxonomies.</li>
+<li><strong>Profile the use cases.</strong> For each approved use case, set the required value on each dimension. Start with the highest stakes: regulatory, financial crime and risk.</li>
+<li><strong>Map sources to profiles.</strong> For each source in the registry, evidence which use cases it can serve. Be honest. A source that meets four of six dimensions is partly fit, not fit.</li>
+<li><strong>Make it queryable at runtime.</strong> Not a PDF or a wiki page, but a service that agents and applications call before consuming data.</li>
+</ol>
+
+<h3>What a fitness profile looks like</h3>
+<p>Here is a profile for transaction monitoring consuming LEI data. It is plain YAML, so it can be version controlled and read by machines.</p>
+<pre><span class="k">use_case:</span>
+  <span class="k">name:</span> transaction_monitoring
+  <span class="k">domain:</span> financial_crime
+  <span class="k">approval_status:</span> approved
+
+<span class="k">fitness_requirements:</span>
+  <span class="k">timeliness:</span>
+    <span class="k">requirement:</span> real_time
+    <span class="k">max_latency_seconds:</span> 5
+  <span class="k">completeness:</span>
+    <span class="k">mandatory_fields:</span> [lei, legal_name, jurisdiction, status]
+    <span class="k">minimum_coverage_percent:</span> 99.9
+  <span class="k">accuracy:</span>
+    <span class="k">tolerance:</span> zero_tolerance
+    <span class="k">reconciliation_frequency:</span> continuous
+  <span class="k">granularity:</span>
+    <span class="k">level:</span> entity_level
+    <span class="k">aggregation_allowed:</span> false
+  <span class="k">lineage:</span>
+    <span class="k">audit_required:</span> true
+    <span class="k">source_evidence:</span> required
+  <span class="k">approval:</span>
+    <span class="k">approved_sources:</span>
+      - system_x_realtime_feed
+    <span class="k">rejected_sources:</span>
+      - system_x_daily_extract
+      - gleif_direct_pull
+
+<span class="k">validation:</span>
+  <span class="k">pre_consumption_check:</span> required
+  <span class="k">failure_action:</span> reject_and_escalate</pre>
+<p>The format is not the point. JSON or another structured language would work as well. What matters is that the profile is explicit, versioned and queryable. Together with the registry, it forms the contract an agent must meet before consuming data.</p>
+
+<h3>How the runtime check works</h3>
+<ol>
+<li>An agent or application makes a request, for example: I need LEI data for transaction monitoring.</li>
+<li>The fitness service receives the request with the use case context.</li>
+<li>It evaluates the candidate source against the use case profile, dimension by dimension.</li>
+<li>It returns a structured verdict: fit, partly fit or not fit, naming any failing dimensions.</li>
+<li>The application proceeds, switches to an alternative source, or escalates.</li>
+</ol>
+<p>This is the difference between data quality being monitored and fitness being enforced.</p>
+
+<span class="chap" id="ch4">Chapter 4</span>
+<h2>Every agent is a control point</h2>
+<p class="chap-src">First published on LinkedIn, 24 October 2026</p>
+
+<p>The fitness check is itself a control. It runs at the point of consumption and stops unsuitable data being used. But fitness is one control among many. Every regulated organisation has a wider set of data quality controls covering completeness, accuracy, freshness, lineage, sensitivity and approval. This chapter asks where those controls should be enforced. As AI agents become routine consumers of data, the answer is changing.</p>
+
+<h3>The control lifecycle</h3>
+<figure>
+  <div class="diagram-box">
+    <div class="lifecycle">
+      <div class="lc"><b>Defined</b><span>Written down and signed off: a policy, a standard, a threshold</span></div>
+      <div class="lc"><b>Implemented</b><span>Logic built into a system or pipeline</span></div>
+      <div class="lc gap"><b>Enforced</b><span>Applied at the right moment to the right data. The opportunity sits here.</span></div>
+      <div class="lc"><b>Monitored</b><span>Outcomes observed and recorded</span></div>
+      <div class="lc"><b>Reported</b><span>Breaches and trends visible to the right people</span></div>
+    </div>
+  </div>
+  <figcaption>Figure 4. The five stages of a data quality control</figcaption>
+</figure>
+<p>In most organisations four of these stages are well established. Controls are defined in catalogues, implemented in pipelines and batch jobs, and reported through dashboards to governance forums. The middle stage, enforcement, is where the most opportunity sits. Not because firms are doing it wrong, but because the architectures that support enforcement were built for a different pattern of consumption.</p>
+
+<h3>Why enforcement needs to change</h3>
+<p>Today's data quality model rests on two strong foundations: scheduled batch checks and operational dashboards. Both do a real job. They were designed when consumption was predictable: a few known applications using data on known schedules. Issues found in the morning batch run could be fixed before the next consumption window.</p>
+<p>AI agents change that pattern. Many agents make many decisions through many small consumption events in real time. By the time a nightly batch finds a quality issue, the data may already have been used across many agent interactions and built into downstream outputs. This is not a failure of existing approaches. It is a chance to extend them by adding a real time enforcement layer alongside the batch and dashboard layers already in place.</p>
+
+<h3>Agents as control invokers, not control authors</h3>
+<p>The shift is simple in concept. If every consumer of data calls a runtime control service before consuming, every consumer becomes a control point.</p>
+<p>That does not mean every agent has its own controls. That would be chaos. It means every agent calls shared control services that live centrally in the data architecture. Controls live as services, agents call them, outcomes are structured and breaches are routed automatically.</p>
+
+<h3>The extended lifecycle</h3>
+<p>The five stages keep their names but deepen in practice:</p>
+<ul>
+<li><strong>Defined</strong> in a machine readable control catalogue, not only a policy document.</li>
+<li><strong>Implemented</strong> as services that can be called at runtime, alongside existing batch and pipeline checks.</li>
+<li><strong>Enforced</strong> at the point of consumption, by every agent that touches the data.</li>
+<li><strong>Monitored</strong> through structured logs of every invocation and outcome.</li>
+<li><strong>Reported</strong> as real time breach notifications to data owners and aggregated trends for governance.</li>
+</ul>
+<p>Each stage builds on what already exists. The runtime layer adds to it. It does not replace it.</p>
+
+<h3>Which controls fit this pattern</h3>
+<p>Completeness, accuracy, freshness, lineage, sensitivity and approval controls all translate naturally into runtime services. Not every control needs to run at runtime, and some work best as periodic checks. The skill is in identifying which controls protect the highest risk consumption decisions and bringing those forward to the moment of use.</p>
+
+<h3>What a runtime control looks like</h3>
+<p>A runtime control is a small, focused service. It accepts a request, evaluates it against a defined rule and returns a structured outcome. Here is a freshness control:</p>
+<pre><span class="k">control:</span>
+  <span class="k">id:</span> freshness_counterparty
+  <span class="k">type:</span> freshness
+  <span class="k">scope:</span> counterparty_data
+
+<span class="k">threshold:</span>
+  <span class="k">max_staleness_minutes:</span> 60
+  <span class="k">reference_field:</span> last_updated_timestamp
+
+<span class="k">invocation:</span>
+  <span class="k">contract:</span> synchronous
+  <span class="k">blocking:</span> true
+
+<span class="k">response:</span>
+  <span class="k">pass:</span> data may be consumed
+  <span class="k">warn:</span> data may be consumed with caveat
+  <span class="k">fail:</span> consumption blocked, breach event published
+
+<span class="k">breach_handling:</span>
+  <span class="k">notify:</span> counterparty_data_owner
+  <span class="k">log:</span> control_event_bus
+  <span class="k">aggregate:</span> governance_dashboard</pre>
+
+<h3>Breach handling closes the loop</h3>
+<p>When a control returns a breach, three things happen automatically. The consumer receives a structured response saying what failed and what to do. The data owner is notified through the established feedback channel. The breach is captured for governance reporting and trend analysis. There is no separate process to remember. The architecture does it, and all five stages of the lifecycle run connected and in real time.</p>
+
+<h3>How to build it</h3>
+<ol>
+<li><strong>Catalogue the controls.</strong> Gather the controls already defined in policies and standards. Prioritise those that protect the highest risk consumption decisions.</li>
+<li><strong>Implement them as runtime services.</strong> For each priority control, build a small service using the same pattern as the fitness service.</li>
+<li><strong>Embed them in agent consumption.</strong> Update agents and applications to call the relevant control before using data. It is a coordinated change, but a small one in each agent.</li>
+<li><strong>Wire the feedback loops.</strong> Connect breach outcomes to data owners, governance dashboards and audit trails, so the loop closes itself.</li>
+</ol>
+
+<span class="chap" id="ch5">Chapter 5</span>
+<h2>The operating model</h2>
+<p class="chap-src">First published on LinkedIn, 31 October 2026</p>
+
+<p>The previous chapters answered three questions. Where should AI get its data? Is the data suitable for the task? Are the rules enforced when the data is used? One question remains: how does this become something an organisation can actually run?</p>
+
+<h3>One capability, not five projects</h3>
+<p>The biggest risk in adopting the network is treating each component as a separate workstream: five teams, five backlogs and five governance forums, all moving at different speeds. The result is five things that do not talk to each other.</p>
+<p>The network is one capability. Its components share contracts, vocabularies and identities, and together they produce coherent context, which is the whole point. Treating it as one capability is the difference between a working network and a collection of disconnected catalogues.</p>
+
+<h3>Governed access</h3>
+<p>Fitness and access are different things. Data may be fit for transaction monitoring, but the agent asking for it may not be entitled to that data for that purpose. Access checks are runtime services, like fitness and controls: same pattern, different question.</p>
+<p>This is where AI agents need to be treated as participants in their own right. Each agent needs its own identity, its own entitlements and a purpose it declares at runtime. Treating an agent as a generic service account works in a sandbox. It does not survive a regulator asking who consumed what, when, and on whose authority.</p>
+
+<h3>The organisational reality map</h3>
+<p>The final component is the one most often skipped. The network must mirror how the organisation actually works: its domains, its processes, its escalation paths and its existing governance forums.</p>
+<p>The trap is the beautifully designed network that nobody recognises. A target architecture drawn in isolation from how the business runs will not be adopted. The teams expected to populate it will quietly resist, and the forums expected to govern it will keep using the spreadsheets they already trust. Adoption comes from grounding the network in current reality. Existing data domains become the unit of ownership. Existing escalation paths carry breach events. Existing forums consume the network's outputs. The network does not replace how the organisation works. It gives that work better foundations.</p>
+
+<h3>Five roles</h3>
+<figure>
+  <div class="roles">
+    <div class="role"><i>Exists today</i><b>Data owners</b>Accountable for quality, sourcing and approved uses of data in their domain, now with tools to act.</div>
+    <div class="role"><i>Often new</i><b>Control owners</b>Accountable for individual control logic and thresholds, close to data ownership.</div>
+    <div class="role"><i>Small and central</i><b>Network stewards</b>Curate the catalogues, contracts and shared vocabularies. An expert function, not a programme office.</div>
+    <div class="role"><i>New for AI</i><b>Agent operators</b>Accountable for the agents their teams deploy and what those agents consume, decide and produce.</div>
+    <div class="role"><i>Exists today</i><b>Governance forums</b>Consume the network's structured outputs rather than ad hoc reports.</div>
+  </div>
+  <figcaption>Figure 5. The operating model: five roles around the network. Most already exist in some form.</figcaption>
+</figure>
+
+<h3>The network in operation</h3>
+<p>When an agent does its job, every consumption decision flows through the network. The agent declares its identity, its purpose and the data it needs. The source registry returns the approved source. The fitness framework confirms suitability for the declared purpose. Runtime controls check completeness, accuracy, freshness, lineage and sensitivity. Governed access confirms the agent is entitled. The agent consumes, and the full interaction is logged. Any breach notifies the relevant data owner and feeds the governance dashboard.</p>
+<p>The agent does not assemble this sequence itself. It is the network's runtime fabric. Each step is a service call that returns a structured answer. </p>
+
+<h3>The maturity journey</h3>
+<p>Most organisations are not starting from zero. Catalogues, dashboards and governance forums already exist. The question is how to evolve them, in what order and at what pace.</p>
+<figure>
+  <div class="diagram-box">
+    <div class="maturity">
+      <div class="mat"><em>Most firms today</em><b>Foundational</b><span>Catalogues and registries are mature but mostly static. Quality is monitored after the fact.</span></div>
+      <div class="mat"><b>Operational</b><span>The registry is queryable. Fitness profiles exist for the highest risk use cases. Some controls run at runtime.</span></div>
+      <div class="mat"><b>Governed</b><span>Every consumption decision flows through the network. Controls, fitness and access are enforced in real time.</span></div>
+      <div class="mat"><b>Adaptive</b><span>The network learns from its own outputs. Profiles, thresholds and access rules evolve from observed patterns.</span></div>
+    </div>
+  </div>
+  <figcaption>Figure 6. Four stages of maturity</figcaption>
+</figure>
+<p>This is multi year work for most firms. The good news is that every stage pays for itself. The first time an agent consults the registry instead of guessing, the network has already earned its place.</p>
+
+<h3>What good looks like</h3>
+<p>When the network is running, AI knows four things at any moment: where to get data, whether it is fit, whether the rules are met, and whether the consumer is authorised. With the organisational reality map underneath, it also knows how the business works: who owns what, where breaches escalate and which forums govern. Trust, speed, governance and scale stop competing and start reinforcing each other.</p>
+
+<div class="callout no-print"><b>See it working</b>The <a href="demo.html">interactive demo</a> runs these rules live. Pick a situation or build your own request, then open any step to see why it passed or failed, and change the approvals, thresholds, conditions or entitlements that drive it.</div>
+
+<span class="chap" id="conclusion">Conclusion</span>
+<h2>Start somewhere</h2>
+<p>The Coherent Memory Network is not a product. It is a discipline: part architecture, part governance, part organisational design. It is built component by component, domain by domain, on top of what most regulated firms already have.</p>
+<p>The argument of this paper is simple. AI does not lack data. It lacks context. The network is how organisations give it that context, in a form it can navigate, with the controls and accountability a regulator expects. Organisations that invest in this foundation will scale AI sustainably. The path is not short, but every stage delivers value and every component strengthens the next.</p>
+<p><strong>Start somewhere. Build one component well. The rest follows.</strong></p>
+
+<span class="chap" id="references">References</span>
+<h2>References and original articles</h2>
+<ol class="refs">
+<li id="ref1">Atlan, <em>What Is a Semantic Layer?</em>, citing Gartner research on semantics in AI ready data.</li>
+<li id="ref2">Microsoft Fabric Blog, announcement of Fabric IQ.</li>
+<li>Bhardwaj, B. <a href="https://www.linkedin.com/pulse/your-ai-only-good-its-memory-you-building-right-one-balraj-bhardwaj-s0jfe/">Your AI Is Only as Good as Its Memory. Are You Building the Right One?</a> LinkedIn, 8 April 2026.</li>
+<li>Bhardwaj, B. <a href="https://www.linkedin.com/pulse/ai-needs-context-start-source-registry-balraj-bhardwaj-opije/">AI Needs Context: Start with a Source Registry.</a> LinkedIn, 9 May 2026.</li>
+<li>Bhardwaj, B. <a href="https://www.linkedin.com/pulse/why-good-data-isnt-enough-what-means-ai-balraj-bhardwaj-gthae/">Why Good Data Isn't Good Enough, and What That Means for AI.</a> LinkedIn, 17 October 2026.</li>
+<li>Bhardwaj, B. <a href="https://www.linkedin.com/pulse/every-agent-control-point-balraj-bhardwaj-plbze/">Every Agent is a Control Point.</a> LinkedIn, 24 October 2026.</li>
+<li>Bhardwaj, B. <a href="https://www.linkedin.com/pulse/trusted-ai-coherent-memory-operating-model-balraj-bhardwaj-fxw8e/">Trusted AI: The Coherent Memory Operating Model.</a> LinkedIn, 31 October 2026.</li>
+</ol>
+<p style="font-family:var(--sans);font-size:13px;color:var(--muted)">This paper is personal work. Systems, data and examples are illustrative and do not describe any specific organisation. Views are the author's own.</p>
+
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="about" aria-labelledby="about-title">
+  <div class="wrap about">
+    <div>
+      <div class="section-head" style="margin-bottom:20px">
+        <div class="eyebrow">About the author</div>
+        <h2 id="about-title">Balraj Bhardwaj</h2>
+      </div>
+      <p>Data architect, data modeller and data governance specialist working in financial services. This framework comes from a simple observation: the controls that make data trustworthy for regulators are the same controls AI needs, but they have to be readable by machines and enforced at the moment data is used.</p>
+      <p><a href="https://www.linkedin.com/in/bal8/">Connect on LinkedIn</a></p>
+    </div>
+    <div>
+      <p class="toc-title">The original article series</p>
+      <ul class="series">
+        <li><a href="https://www.linkedin.com/pulse/your-ai-only-good-its-memory-you-building-right-one-balraj-bhardwaj-s0jfe/"><span class="n">01</span><span>Your AI Is Only as Good as Its Memory</span><span class="d">Apr 2026</span></a></li>
+        <li><a href="https://www.linkedin.com/pulse/ai-needs-context-start-source-registry-balraj-bhardwaj-opije/"><span class="n">02</span><span>AI Needs Context: Start with a Source Registry</span><span class="d">May 2026</span></a></li>
+        <li><a href="https://www.linkedin.com/pulse/why-good-data-isnt-enough-what-means-ai-balraj-bhardwaj-gthae/"><span class="n">03</span><span>Why Good Data Isn't Good Enough</span><span class="d">Oct 2026</span></a></li>
+        <li><a href="https://www.linkedin.com/pulse/every-agent-control-point-balraj-bhardwaj-plbze/"><span class="n">04</span><span>Every Agent is a Control Point</span><span class="d">Oct 2026</span></a></li>
+        <li><a href="https://www.linkedin.com/pulse/trusted-ai-coherent-memory-operating-model-balraj-bhardwaj-fxw8e/"><span class="n">05</span><span>Trusted AI: The Coherent Memory Operating Model</span><span class="d">Oct 2026</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Balraj Bhardwaj. Personal work. Views are the author's own.</span>
+    <span><a href="#paper">White paper</a> &nbsp;·&nbsp; <a href="demo.html">Demo</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/bal8/">LinkedIn</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* Theme toggle */
+  var root=document.documentElement, KEY='cmn-theme';
+  try{var saved=localStorage.getItem(KEY); if(saved) root.setAttribute('data-theme',saved);}catch(e){}
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark'; root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+  });
+
+  /* Table of contents and nav highlighting */
+  var tocLinks=[].slice.call(document.querySelectorAll('.toc a'));
+  var navLinks=[].slice.call(document.querySelectorAll('[data-nav]'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var id=en.target.id;
+          tocLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id);});
+        }
+      });
+    },{rootMargin:'-80px 0px -70% 0px'});
+    tocLinks.forEach(function(a){var t=document.querySelector(a.getAttribute('href')); if(t) io.observe(t);});
+    var io2=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){navLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id);});}
+      });
+    },{rootMargin:'-50% 0px -50% 0px'});
+    ['paper','about'].forEach(function(id){io2.observe(document.getElementById(id));});
+  }
+
+})();
+</script>
+</body>
+</html>
