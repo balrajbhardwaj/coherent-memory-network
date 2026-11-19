@@ -1,10 +1,58 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coherent Memory Network</title>
-<meta name="description" content="A white paper and interactive demo on giving AI agents governed context in regulated organisations. By Balraj Bhardwaj.">
+<title>Coherent Memory Network: Trusted AI and Data Governance White Paper</title>
+<meta name="description" content="AI does not lack data, it lacks context. A white paper by Balraj Bhardwaj on governing the data AI agents use in regulated firms, with an interactive demo.">
+<meta name="author" content="Balraj Bhardwaj">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="data governance, AI governance, trusted AI, AI agents, data quality controls, authorised source registry, fitness for purpose, data lineage, regulatory reporting, financial services">
+<link rel="canonical" href="https://balrajbhardwaj.github.io/coherent-memory-network/">
+<meta name="theme-color" content="#14213D">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+
+<!-- Social sharing (LinkedIn, X, Slack, Teams) -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Coherent Memory Network">
+<meta property="og:title" content="Trusted AI needs a coherent memory">
+<meta property="og:description" content="A practical framework for regulated organisations to give AI agents governed context they can query at the moment they use data.">
+<meta property="og:url" content="https://balrajbhardwaj.github.io/coherent-memory-network/">
+<meta property="og:image" content="https://balrajbhardwaj.github.io/coherent-memory-network/assets/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Coherent Memory Network: trusted AI needs a coherent memory. White paper by Balraj Bhardwaj.">
+<meta property="og:locale" content="en_GB">
+<meta property="article:author" content="https://www.linkedin.com/in/bal8/">
+<meta property="article:published_time" content="2026-11-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trusted AI needs a coherent memory">
+<meta name="twitter:description" content="A practical framework for regulated organisations to give AI agents governed context they can query at the moment they use data.">
+<meta name="twitter:image" content="https://balrajbhardwaj.github.io/coherent-memory-network/assets/share.png">
+
+<!-- Structured data for search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Trusted AI needs a coherent memory: the Coherent Memory Network",
+  "description": "A white paper on giving AI agents governed context in regulated organisations, covering an authorised source registry, fitness for purpose profiles, runtime data quality controls, governed access and an operating model.",
+  "image": "https://balrajbhardwaj.github.io/coherent-memory-network/assets/share.png",
+  "datePublished": "2026-11-19",
+  "dateModified": "2026-11-19",
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": "https://balrajbhardwaj.github.io/coherent-memory-network/",
+  "author": {
+    "@type": "Person",
+    "name": "Balraj Bhardwaj",
+    "jobTitle": "Data Architect, Data Modeller, Data Governance Specialist",
+    "url": "https://www.linkedin.com/in/bal8/",
+    "sameAs": ["https://www.linkedin.com/in/bal8/", "https://github.com/balrajbhardwaj"]
+  },
+  "keywords": "data governance, AI governance, trusted AI, AI agents, data quality, authorised source registry, fitness for purpose, regulatory reporting",
+  "about": ["Data governance", "Artificial intelligence", "Data quality"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -70,10 +118,6 @@
           <li><a href="#conclusion">Conclusion</a></li>
           <li><a href="#references">References</a></li>
         </ol>
-        <button class="btn btn-pdf" type="button" onclick="window.print()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
-          Download as PDF
-        </button>
       </aside>
 
       <article class="paper">
@@ -81,7 +125,6 @@
           <span>Author <b>Balraj Bhardwaj</b></span>
           <span>Published <b>November 2026</b></span>
           <span>Reading time <b>about 25 minutes</b></span>
-          <a class="no-print" href="#" onclick="window.print();return false;">Download as PDF</a>
         </div>
 
         <div class="prose">
